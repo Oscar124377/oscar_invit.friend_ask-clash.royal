@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Test</title>
+<title>Page</title>
 
 <style>
+
 body{
   margin:0;
-  background:black;
+  font-family: Arial, sans-serif;
+  background:#f5f5f5;
 }
 
 #image{
@@ -17,40 +19,76 @@ body{
   object-fit:cover;
 }
 
-#cookies{
+#cookieBox{
   position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  background:#333;
-  color:white;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  width:80%;
+  max-width:700px;
+  background:white;
   padding:20px;
-  text-align:center;
+  border-radius:10px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
-</style>
 
+#cookieButtons{
+  margin-top:15px;
+  text-align:right;
+}
+
+button{
+  padding:10px 16px;
+  margin-left:10px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:14px;
+}
+
+#accept{
+  background:#2e7dff;
+  color:white;
+}
+
+#reject{
+  background:#e0e0e0;
+}
+
+</style>
 </head>
+
 <body>
 
 <img id="image" src="image-du-mec.jpg">
 
 <audio id="son" src="son-ultra-fort.mp3"></audio>
 
-<div id="cookies">
-Ce site utilise des cookies 🍪  
-<br><br>
-<button id="btn">Accepter</button>
+<div id="cookieBox">
+<b>Nous utilisons des cookies</b><br>
+Nous utilisons des cookies pour améliorer votre expérience sur notre site.
+
+<div id="cookieButtons">
+<button id="reject">Refuser</button>
+<button id="accept">Accepter tout</button>
+</div>
 </div>
 
 <script>
 
-document.getElementById("btn").onclick = function(){
+document.getElementById("accept").onclick = function(){
 
-document.getElementById("cookies").style.display = "none";
-document.getElementById("image").style.display = "block";
+document.getElementById("cookieBox").style.display="none";
+document.getElementById("image").style.display="block";
 
-document.getElementById("son").play();
+let son = document.getElementById("son");
+son.currentTime = 0;
+son.play();
 
+};
+
+document.getElementById("reject").onclick = function(){
+document.getElementById("cookieBox").style.display="none";
 };
 
 </script>
