@@ -2,35 +2,31 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Surprise !</title>
+<title>Surprise</title>
 <style>
-  body {
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:black;
-  }
-  img {
-    cursor:pointer;
-    width:400px;
-  }
+body {
+  margin: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
 </style>
 </head>
+
 <body>
 
-<img src="image-du-mec.jpg" alt="Clique ici !" id="imageButton">
-<audio id="sound" src="son-ultra-fort.mp3"></audio>
+<img src="image-du-mec.jpg">
 
-<script>
-const img = document.getElementById('imageButton');
-const audio = document.getElementById('sound');
-
-img.addEventListener('click', () => {
-  audio.volume = 1; // volume maximum
-  audio.play();
-</script>
+<audio autoplay>
+  <source src="son-ultra-fort.mp3" type="audio/mpeg">
+</audio>
 
 </body>
 </html>
