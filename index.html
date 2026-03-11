@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Surprise !</title>
+<style>
+  body {
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:black;
+  }
+  img {
+    cursor:pointer;
+    width:400px;
+  }
+</style>
+</head>
+<body>
+
+<img src="image-du-mec.jpg" alt="Clique ici !" id="imageButton">
+<audio id="sound" src="son-ultra-fort.mp3"></audio>
+
+<script>
+const img = document.getElementById('imageButton');
+const audio = document.getElementById('sound');
+
+img.addEventListener('click', () => {
+  audio.volume = 1; // volume maximum
+  audio.play();
+  alert("BOUM ! 🎵"); // optionnel pour effet surprise
+});
+</script>
+
+</body>
+</html>
